@@ -7,7 +7,6 @@ export const initState={
 export const reducer = (state,action)=>{
     switch (action.type){
         case OpenSideBar:
-            console.log("here")
             return{
                 ...state,isSidebarOpen:true
             }

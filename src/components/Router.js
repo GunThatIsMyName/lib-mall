@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Navbar, Sidebar } from ".";
+import { Footer, Navbar, Sidebar } from ".";
 import { About, Contact, ErrorPage, Home, Shop } from "../pages";
 
 
@@ -17,6 +17,7 @@ const Router = ()=>{
                 <Route path="/contact" component={Contact} />
                 <Route path="*" component={ErrorPage} />
             </Switch>
+            <Footer/>
         </BrowserRouter>
     )
 }

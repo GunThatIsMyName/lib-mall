@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import { NavList } from ".";
 import { useGlobalContext } from "../context/AppContext";
-const Navbar = () => {
+const Navbar = ({location:{pathname}}) => {
     const {openSidebar}=useGlobalContext();
     return (
         <NavContainer>
@@ -18,7 +18,7 @@ const Navbar = () => {
                     </button>
                 </div>
                 <ul className="nav-links">
-                    <NavList />
+                    <NavList pathname={pathname}/>
                 </ul>
             </div>
         </NavContainer>
@@ -83,12 +83,9 @@ const NavContainer = styled.nav`
                 text-transform: capitalize;
                 letter-spacing: var(--spacing);
                 padding: 0.5rem;
-                &:hover {
-                    border-bottom: 2px solid var(--clr-primary-7);
-                }
             }
         }
     }
 `;
 
-export default Navbar;
+export default withRouter(Navbar);
