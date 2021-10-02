@@ -26,7 +26,7 @@ const Navbar = ({location:{pathname}}) => {
 };
 
 const NavContainer = styled.nav`
-    background-color: teal;
+    background-color: #A0A4A8;
     height: 5rem;
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@ const NavContainer = styled.nav`
     .nav-toggle {
         background: transparent;
         border: transparent;
-        color: var(--clr-primary-5);
+        color: white;
         cursor: pointer;
         svg {
             font-size: 2rem;
@@ -78,7 +78,7 @@ const NavContainer = styled.nav`
                 margin: 0 0.5rem;
             }
             a {
-                color: var(--clr-grey-3);
+                color: white;
                 font-size: 1rem;
                 text-transform: capitalize;
                 letter-spacing: var(--spacing);

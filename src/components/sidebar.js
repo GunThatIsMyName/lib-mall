@@ -17,7 +17,7 @@ const Sidebar = () => {
                     </button>
                 </div>
                 <ul className="links">
-                    <NavList close={closeSidebar} />
+                    <NavList closeSidebar={closeSidebar} />
                 </ul>
             </aside>
         </SidebarContainer>

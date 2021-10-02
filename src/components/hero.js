@@ -1,105 +1,124 @@
-import React from 'react';
-import styled from 'styled-components';
-import {Link} from 'react-router-dom';
-import fasion1 from '../assets/show1.jpeg';
-import fasion2 from '../assets/show2.jpeg';
-
-const Hero = () => {
-  return (
-    <Wrapper className="section-center">
-      <article className="content">
-        <h1>
-          Liberzen <br />
-        </h1>
-        <div className="underline" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-          laudantium laborum! Libero laudantium necessitatibus dolore ducimus
-          facere mollitia ut, enim doloremque deleniti expedita natus ipsum
-          accusantium sunt illo quasi harum.
-        </p>
-        <Link to="/products" className="btn hero-btn">
-          shop now
-        </Link>
-      </article>
-      <article className="img-container">
-        <img src={fasion1} alt="nice table" className="main-img" />
-        <img src={fasion2} alt="person working" className="accent-img" />
-      </article>
-    </Wrapper>
-  );
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import HeroVideo from "../assets/liberzen.mp4";
+const Video = () => {
+    return (
+        <Wrapper className="section-center">
+            <article className="img-container">
+                <video
+                    className="video-content"
+                    src={HeroVideo}
+                    playsInline
+                    muted={true}
+                    autoPlay={true}
+                    loop
+                />
+            </article>
+            <article className="content">
+                <h1>
+                    LIBERZEN <br />
+                </h1>
+                <div className="underline" />
+                <p>
+                   <strong>Live</strong> your dream. <br />
+                   <strong>Wear</strong> your Passion.<br />
+                    You can get it with Liberzen, <br />
+                </p>
+                <Link to="/products" className="btn hero-btn">
+                    shop now
+                </Link>
+            </article>
+        </Wrapper>
+    );
 };
-
 const Wrapper = styled.section`
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  .main-img {
-    width: 100%;
-    height: 240px;
-  }
-  .accent-img {
-    display: none;
-  }
-
-  .underline {
-    width: 8rem;
-    height: 0.25rem;
-    margin-bottom: 1.25rem;
-    background: teal;
-  }
-
-  p {
-    line-height: 2;
-    max-width: 45em;
-    margin-bottom: 2rem;
-    color: var(--clr-grey-5);
-    font-size: 1rem;
-  }
-  @media (min-width: 992px) {
-    height: calc(100vh - 5rem);
-    grid-template-columns: 1fr 1fr;
-    gap: 8rem;
-    h1 {
-      margin-bottom: 2rem;
-    }
-    p {
-      font-size: 1.25rem;
-    }
-    .hero-btn {
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-    }
-    .img-container {
-      display: block;
-      position: relative;
-    }
+    margin-top: 3rem;
+    min-height: 80vh;
     .main-img {
-      width: 100%;
-      height: 550px;
-      position: relative;
-      border-radius: var(—radius);
-      display: block;
-      object-fit: cover;
+        width: 100%;
+        height: 240px;
+    }
+    .video-content {
+        max-width: 100%;
+        max-height: 100%;
+        box-shadow: -3px 7px 42px -1px rgba(0, 0, 0, 0.69);
+        -webkit-box-shadow: -3px 7px 42px -1px rgba(0, 0, 0, 0.69);
+        -moz-box-shadow: -3px 7px 42px -1px rgba(0, 0, 0, 0.69);
     }
     .accent-img {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 250px;
-      transform: translateX(-50%);
-      border-radius: var(—radius);
+        display: none;
     }
-    .img-container::before {
-      content: '';
-      position: absolute;
-      width: 10%;
-      height: 80%;
-      background: teal;
-      bottom: 0%;
-      left: -8%;
-      border-radius: var(—radius);
+    .img-container {
+        width: 100%;
+        display: block;
+        position: relative;
+        margin-bottom: 4rem;
     }
-  }
+    .content {
+        width: 100%;
+        height: 50%;
+    }
+
+    .underline {
+        width: 8rem;
+        height: 0.25rem;
+        margin-bottom: 1.25rem;
+        background: #a0a4a8;
+    }
+
+    p {
+        line-height: 2;
+        max-width: 45em;
+        margin-bottom: 2rem;
+        color: var(--clr-grey-5);
+        font-size: 1rem;
+    }
+    @media (min-width: 992px) {
+        margin-top: 0rem;
+        height: calc(100vh - 5rem);
+        grid-template-columns: 2fr 1fr;
+        gap: 8rem;
+        display: grid;
+        place-items: center;
+        h1 {
+            margin-bottom: 2rem;
+        }
+        p {
+            font-size: 1.25rem;
+        }
+        .hero-btn {
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .img-container {
+            width: 40vw;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .main-img {
+            width: 100%;
+            height: 550px;
+            position: relative;
+            border-radius: var(—radius);
+            display: block;
+            object-fit: cover;
+        }
+        .accent-img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 250px;
+            transform: translateX(-50%);
+            border-radius: var(—radius);
+        }
+    }
 `;
-export default Hero;
+export default Video;

@@ -8,5 +8,6 @@ import Work from "./work";
 import Main from "./main";
 import Timeline from "./timeline";
 import Tocuh from "./touch";
+import Company from "./company"
 
-export {Footer,Hero,Label,Navbar,Sidebar,NavList,Work,Main,Timeline,Tocuh,};
+export {Footer,Hero,Label,Navbar,Sidebar,NavList,Work,Main,Timeline,Tocuh,Company};
