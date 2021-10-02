@@ -5,6 +5,10 @@ Variables
 */
 
 :root {
+  --back-dark:#181818;
+  --back-black:#595959;
+  --back-white:#FAFAFA;
+  --back-tesla:#F2F2F2;
   /* dark shades of primary color*/
   --clr-primary-1: hsl(22, 28%, 21%);
   --clr-primary-2: hsl(22, 28%, 29%);
@@ -60,7 +64,7 @@ Global Styles
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: var(--clr-white);
+  background: var(--back-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -88,6 +92,7 @@ h5 {
 }
 h1 {
   font-size: 2.5rem;
+  margin-bottom: 0;
 }
 h2 {
   font-size: 2rem;
@@ -170,7 +175,7 @@ p {
 
 .btn {
   text-transform: uppercase;
-  background: #A0A4A8;
+  background: var(--back-dark);
   color: white;
   padding: 0.375rem 0.75rem;
   letter-spacing: var(--spacing);
@@ -184,7 +189,7 @@ p {
   border-color: transparent;
 }
 .btn:hover {
-  color: #A0A4A8;
+  color: var(--back-dark);
   background: white;
 }
 .title {
@@ -194,7 +199,7 @@ p {
   width: 6rem;
   height: 0.25rem;
   background: #49a6e9;
-  background: var(--clr-primary-5);
+  background: var(--back-dark);
   margin-left: auto;
   margin-right: auto;
 }

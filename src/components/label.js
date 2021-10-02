@@ -57,13 +57,15 @@ const Wrapper = styled.section`
         }
     }
     .logo-info:first-child {
+        padding-bottom:2rem;
         margin-bottom:2rem;
+        border-bottom:3px dotted black;
     }
     .underline {
         width: 8rem;
         height: 0.25rem;
         margin-bottom: 1.25rem;
-        background: #a0a4a8;
+        background: var(--back-dark);
     }
     .btn {
         display: block;

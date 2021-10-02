@@ -1,16 +1,13 @@
 import React from "react";
-import { Company, Hero, Label, Main, Timeline, Work } from "../components";
-import Touch from "../components/touch";
+import { Company, Hero, Label, Main, Work } from "../components";
 
 const Home = ()=>{
     return <>
         <Hero />
         <Company />
+        <Main />
         <Label />
         <Work />
-        <Main />
-        <Timeline />
-        <Touch />
     </>
 }
 

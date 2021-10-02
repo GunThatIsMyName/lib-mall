@@ -1,41 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Error} from '../pages';
-import { Link } from 'react-router-dom';
-import { years } from '../utils/constans';
-import { Product } from '.';
+import { storesData } from '../utils/constans';
+import { Stores } from '.';
 
-const Main = () => {
-  // if (loading) {
-  //   return <Loading />;
-  // }
-  // if (error) {
-  //   console.log(error, 'error2');
-  //   return <Error />;
-  // }
-
+const Store = () => {
   return (
     <Wrapper className="section">
       <div className="title">
         <h2>featured products</h2>
         <div className="underline"></div>
         <div className="section-center featured">
-          {years &&
-            years
+          {storesData &&
+            storesData
               .map((item) => {
-                return <Product key={item.id} {...item} />;
+                return <Stores className="product" key={item.id} {...item} />;
               })}
         </div>
       </div>
-      <Link to="/products" className="btn shop-btn">
-        All Products
-      </Link>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  background: var(--clr-grey-10);
   .featured {
     margin: 4rem auto;
     display: grid;
@@ -43,6 +29,9 @@ const Wrapper = styled.section`
     img {
       height: 225px;
     }
+  }
+  .product{
+     border:10px solid
   }
   .shop-btn {
     display: block;
@@ -61,4 +50,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default Main;
+export default Store;

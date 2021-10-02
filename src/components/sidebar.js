@@ -11,7 +11,7 @@ const Sidebar = () => {
         <SidebarContainer>
             <aside className={`sidebar ${isSidebarOpen && "show-sidebar"}`} >
                 <div className="sidebar-header">
-                    <h2>hello</h2>
+                    <h2>LIBERZEN</h2>
                     <button type="button" onClick={closeSidebar} className="close-btn">
                         <FaTimes />
                     </button>
@@ -36,14 +36,14 @@ const SidebarContainer = styled.div`
         font-size: 2rem;
         background: transparent;
         border-color: transparent;
-        color: var(--clr-primary-5);
+        color: var(--back-dark);
         transition: var(--transition);
         cursor: pointer;
-        color: var(--clr-red-dark);
+        color: var(--back-dark);
         margin-top: 0.2rem;
     }
     .close-btn:hover {
-        color: var(--clr-red-light);
+        color: var(--back-dark);
     }
     .logo {
         justify-self: center;

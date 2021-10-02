@@ -26,7 +26,7 @@ const Navbar = ({location:{pathname}}) => {
 };
 
 const NavContainer = styled.nav`
-    background-color: #A0A4A8;
+    background-color: var(  --back-dark);
     height: 5rem;
     display: flex;
     align-items: center;

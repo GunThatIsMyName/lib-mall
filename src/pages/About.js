@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react';
+import { Store,Story } from '../components';
 
-const About = ()=>{
-    return <h1>About Page</h1>
-}
+const About = () => {
+  return <>
+    <Story />
+    <Store />
+  </>
+};
 
 export default About;

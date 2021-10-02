@@ -26,7 +26,7 @@ const Video = () => {
                     You can get it with Liberzen, <br />
                 </p>
                 <Link to="/products" className="btn hero-btn">
-                    shop now
+                    contact us
                 </Link>
             </article>
         </Wrapper>
@@ -64,7 +64,7 @@ const Wrapper = styled.section`
         width: 8rem;
         height: 0.25rem;
         margin-bottom: 1.25rem;
-        background: #a0a4a8;
+        background: var(  --back-dark);
     }
 
     p {
@@ -88,6 +88,7 @@ const Wrapper = styled.section`
             font-size: 1.25rem;
         }
         .hero-btn {
+            width:70%;
             padding: 0.5rem 1.5rem;
             font-size: 1rem;
         }
