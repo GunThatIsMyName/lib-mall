@@ -4,11 +4,11 @@ import {Link, useLocation} from 'react-router-dom';
 
 const PageHero = () => {
   const {pathname} = useLocation();
+  console.log(pathname.substr(6),"path")
   return (
     <Wrapper>
       <div className="section-center">
-        <h3>
-          <Link to="/"> shop </Link> {pathname}
+        <h3> {pathname.substr(6)} collection
         </h3>
       </div>
     </Wrapper>
@@ -16,12 +16,15 @@ const PageHero = () => {
 };
 
 const Wrapper = styled.section`
-  background: var(--clr-primary-10);
+  background: #F4F3EE;
   width: 100%;
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   align-items: center;
-
+  h3{
+    margin:0;
+    font-size:1rem;
+  }
   color: var(--clr-primary-1);
   a {
     color: var(--clr-primary-3);
@@ -30,6 +33,11 @@ const Wrapper = styled.section`
   }
   a:hover {
     color: var(--clr-primary-1);
+  }
+  @media (min-width: 992px) {
+    h3{
+      font-size:2rem;
+    }
   }
 `;
 

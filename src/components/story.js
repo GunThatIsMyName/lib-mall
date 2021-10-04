@@ -1,64 +1,123 @@
-import React from "react";
-import styled from "styled-components";
-import aboutImg from "../assets/year2017.jpeg";
+import React from 'react';
+import styled from 'styled-components';
+import video from '../assets/liberzen.mp4';
 
 const Story = () => {
-    return (
-        <main>
-            <Wrapper className="page section section-center">
-                <img src={aboutImg} className="" alt="nice desk" />
-                <article>
-                    <div className="title">
-                        <h2>our story</h2>
-                        <div className="underline"></div>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Architecto voluptates possimus deleniti nulla maiores.
-                        Mollitia doloremque quo, sed dolore temporibus nam hic
-                        voluptatum consequuntur magnam, veritatis ad ipsa ipsam
-                        dolor?
-                    </p>
-                </article>
-            </Wrapper>
-        </main>
-    );
+  return (
+    <main className="story-main">
+      <Wrapper className="page section section-center">
+        <article className="img-container">
+          <video
+            className="video-content"
+            src={video}
+            playsInline
+            muted={true}
+            autoPlay={true}
+            loop
+          />
+        </article>
+        <article className="content">
+          <h1>
+            LIBERZEN <br />
+          </h1>
+          <div className="underline" />
+          <p>
+          "Mama always said life was like a box of chocolates. You never know what you're gonna get."
+
+          </p>
+        </article>
+      </Wrapper>
+    </main>
+  );
 };
 
 const Wrapper = styled.section`
+  margin-top: 3rem;
+  min-height: 80vh;
+  .main-img {
+    width: 100%;
+    height: 240px;
+  }
+  .video-content {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: -3px 7px 42px -1px rgba(0, 0, 0, 0.69);
+    -webkit-box-shadow: -3px 7px 42px -1px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: -3px 7px 42px -1px rgba(0, 0, 0, 0.69);
+  }
+  .accent-img {
+    display: none;
+  }
+  .img-container {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-bottom: 4rem;
+  }
+  .content {
+    width: 100%;
+    height: 50%;
+  }
+
+  .underline {
+    width: 8rem;
+    height: 0.25rem;
+    background: black;
+  }
+
+  p {
+    line-height: 2;
+    max-width: 45em;
+    margin: 2rem 0;
+    color: black;
+    font-size: 1rem;
+  }
+  @media (min-width: 992px) {
+    margin-top: 0rem;
+    height: calc(100vh - 5rem);
+    grid-template-columns: 2fr 1fr;
+    gap: 8rem;
     display: grid;
-    gap: 4rem;
-    img {
-        width: 100%;
-        display: block;
-        border-radius: var(--radius);
-        height: 500px;
-        object-fit: cover;
+    place-items: center;
+    h1 {
+      margin-bottom: 2rem;
     }
     p {
-        line-height: 2;
-        max-width: 45em;
-        margin: 0 auto;
-        margin-top: 2rem;
-        color: var(--clr-grey-5);
+      font-size: 1.25rem;
     }
-    article {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .hero-btn {
+      width: 70%;
+      padding: 0.5rem 1.5rem;
+      font-size: 1rem;
     }
-    .title {
-        text-align: left;
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .underline {
-        margin-left: 0;
+    .img-container {
+      width: 40vw;
+      height: 80%;
+      display: flex;
+      align-items: center;
+      position: relative;
     }
-    @media (min-width: 992px) {
-        grid-template-columns: 1fr 1fr;
-        img {
-            height: 650px;
-        }
+    .main-img {
+      width: 100%;
+      height: 550px;
+      position: relative;
+      border-radius: var(—radius);
+      display: block;
+      object-fit: cover;
     }
+    .accent-img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 250px;
+      transform: translateX(-50%);
+      border-radius: var(—radius);
+    }
+  }
 `;
-
 export default Story;

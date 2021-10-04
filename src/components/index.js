@@ -16,9 +16,11 @@ import Sort from "./sort";
 import ProductList from "./productList";
 import PageHero from "./pageHero";
 import Filters from "./filter";
+import AboutHero from "./aboutHero";
 
 
 export {
+    AboutHero,
     Filters,
     PageHero,
     ProductList,

@@ -17,7 +17,7 @@ const Main = () => {
   return (
     <Wrapper className="section">
       <div className="title">
-        <h2>featured products</h2>
+        <h2>리버젠 작품</h2>
         <div className="underline"></div>
         <div className="section-center featured">
           {years &&
@@ -28,7 +28,7 @@ const Main = () => {
         </div>
       </div>
       <Link to="/products" className="btn shop-btn">
-        All Products
+        더 많은 제품들 보러가기
       </Link>
     </Wrapper>
   );

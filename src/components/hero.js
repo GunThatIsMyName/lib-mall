@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import HeroVideo from "../assets/liberzen.mp4";
+import HeroVideo from "../assets/liberzen2.mp4";
 const Video = () => {
     return (
         <Wrapper className="section-center">

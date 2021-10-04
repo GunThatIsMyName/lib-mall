@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const category = [
-    { id: 2014, name: "14년도" },
-    { id: 2015, name: "15년도" },
-    { id: 2016, name: "16년도" },
-    { id: 2017, name: "17년도" },
-    { id: 2018, name: "18년도" },
-    { id: 2019, name: "19년도" },
-    { id: 2020, name: "20년도" },
-    { id: 2021, name: "21년도" },
+    { id: 2021, name: "2021" },
+    { id: 2020, name: "2020" },
+    { id: 2019, name: "2019" },
+    { id: 2018, name: "2018" },
+    { id: 2017, name: "2017" },
+    { id: 2016, name: "2016" },
+    { id: 2015, name: "2015" },
+    { id: 2014, name: "2014" },
 ];
 
 const Filters = () => {
@@ -24,8 +24,8 @@ const Filters = () => {
                             {category.length > 1 &&
                                 category.map(({ id, name }) => {
                                     return (
-                                      <Link to={`/shop/${id}`}>
-                                        <button  name="category" key={id}>
+                                      <Link key={id} to={`/shop/${id}`}>
+                                        <button  name="category">
                                             {name}
                                         </button>
                                       </Link>
@@ -44,6 +44,10 @@ const Wrapper = styled.section`
         margin-bottom: 1.25rem;
         h5 {
             margin-bottom: 0.5rem;
+        }
+        div{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr 1fr 1fr;
         }
     }
     .search-input {
@@ -131,6 +135,13 @@ const Wrapper = styled.section`
         border-radius: var(--radius);
     }
     @media (min-width: 768px) {
+        .form-control{
+            display:block;
+            div{
+                display:block;
+            }
+        }
+        
         .content {
             position: sticky;
             top: 1rem;

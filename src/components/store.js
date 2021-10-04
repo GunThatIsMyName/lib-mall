@@ -7,7 +7,7 @@ const Store = () => {
   return (
     <Wrapper className="section">
       <div className="title">
-        <h2>featured products</h2>
+        <h2>매장 정보 </h2>
         <div className="underline"></div>
         <div className="section-center featured">
           {storesData &&
