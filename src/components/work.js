@@ -32,7 +32,6 @@ const Work = () => {
 };
 
 const Wrapper = styled.section`
-background-color:var(--back-tesla);
   h3,
   h4 {
     color: var(--clr-primary-2);

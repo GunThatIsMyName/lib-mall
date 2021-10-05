@@ -27,7 +27,7 @@ const Main = () => {
               })}
         </div>
       </div>
-      <Link to="/products" className="btn shop-btn">
+      <Link to="/shop " className="btn shop-btn">
         더 많은 제품들 보러가기
       </Link>
     </Wrapper>

@@ -1,2 +1,7 @@
 export const OpenSideBar="OPENSIDEBAR"
 export const CloseSideBar="CLOSESIDEBAR"
+export const finishLoading="FINISHLOADING"
+export const beginLoading="BEGINLOADING"
+export const getYearData="GETYEARDATA"
+export const clickOpenModal="OPENMODAL"
+export const clickCloseModal="CLOSEMODAL"

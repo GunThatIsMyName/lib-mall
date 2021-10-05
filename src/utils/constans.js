@@ -57,9 +57,9 @@ export const services = [
 ];
 
 export const years = [
-  { id: 3, name: "2016", text: "2016 best cut", image: year2016 },
-  { id: 2, name: "2015", text: "2015 best cut", image: year2015 },
-  { id: 1, name: "2014", text: "2014 best cut", image: year2014 },
+  { id: 3, name: 2016, text: "2016 best cut", image: year2016 },
+  { id: 2, name: 2015, text: "2015 best cut", image: year2015 },
+  { id: 1, name: 2014, text: "2014 best cut", image: year2014 },
 ];
 export const storesData = [
     {id:1,name:"동대문 매장",text:"contact 010-1231-1232",image:store1},

@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link, useLocation} from 'react-router-dom';
+import { useGlobalContext } from '../context/AppContext';
 
-const PageHero = () => {
-  const {pathname} = useLocation();
-  console.log(pathname.substr(6),"path")
+const PageHero = ({pathname}) => {
   return (
     <Wrapper>
       <div className="section-center">

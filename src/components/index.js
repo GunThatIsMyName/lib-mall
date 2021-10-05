@@ -17,9 +17,11 @@ import ProductList from "./productList";
 import PageHero from "./pageHero";
 import Filters from "./filter";
 import AboutHero from "./aboutHero";
+import Modal from "./Modal";
 
 
 export {
+    Modal,
     AboutHero,
     Filters,
     PageHero,
