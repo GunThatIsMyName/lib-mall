@@ -17,6 +17,9 @@ exports.handler = async (event, context) => {
             return {id,image,desc,month}
         })
         return {
+            headers: {
+                'Acess-Control-Allow-Origin':'*',
+            },
             statusCode: 200,
             body: JSON.stringify(data),
         };
