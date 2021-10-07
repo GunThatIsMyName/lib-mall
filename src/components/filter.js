@@ -2,16 +2,16 @@ import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import styled from 'styled-components';
 
-const category = [
-    {id: 2021, name: '2021'},
-    {id: 2020, name: '2020'},
-    {id: 2019, name: '2019'},
-    {id: 2018, name: '2018'},
-    {id: 2017, name: '2017'},
-    {id: 2016, name: '2016'},
-    {id: 2015, name: '2015'},
-    {id: 2014, name: '2014'},
-];
+ const category =()=> {
+  let max = new Date().getFullYear()
+  let min = 2014
+  let years = []
+  for (let i = max; i >= min; i--) {
+    const data ={id:i,name:i}
+    years.push(data)
+  }
+  return years
+}
 
 const Filter = ({location: {pathname}}) => {
   const year = pathname.substr(6);
@@ -22,8 +22,8 @@ const Filter = ({location: {pathname}}) => {
           <div className="form-control">
             <h5>Collections</h5>
             <div>
-              {category.length > 1 &&
-                category.map(({id, name}) => {
+              {category().length > 1 &&
+                category().map(({id, name}) => {
                   return (
                     <Link key={id} to={`/shop/${id}`}>
                       <button

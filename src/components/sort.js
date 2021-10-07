@@ -5,7 +5,7 @@ import { useGlobalContext } from "../context/AppContext";
 import { getTotalNumber } from "../utils/helper";
 const Sort = () => {
     const { yearData, isLoading } = useGlobalContext();
-    const totalProduct = yearData.map((item) => item.image.length);
+    const totalProduct = yearData.map((item) => item.image&& item.image.length);
     return (
         <Wrapper>
             <div className="btn-container">

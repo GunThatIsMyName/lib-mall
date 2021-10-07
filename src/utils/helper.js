@@ -1,7 +1,10 @@
 export const getTotalNumber = (data)=>{
-    if(data.length < 1){
-        return "0"
-    }
-    const totalNumber = data.reduce((item,curr)=>item+curr)
+    const itemNumber = data.map(item=>{
+        if(item ===undefined){
+            return 0;
+        }
+        return item;
+    })
+    const totalNumber = itemNumber.reduce((item,curr)=>item+curr)
     return totalNumber;
 }

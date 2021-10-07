@@ -16,7 +16,7 @@ const initState ={
 const AppContext = createContext();
 const AppProvider = ({children})=>{
     const [state,dispatch]=useReducer(reducer,initState)
-    const [showPhoto,setShowPhoto]=useState(null)
+    const [showPhoto,setShowPhoto]=useState({})
     const [currentPath,setCurrentPath]=useState(null)
     const openSidebar = ()=>{
         dispatch({type:OpenSideBar})
@@ -39,15 +39,20 @@ const AppProvider = ({children})=>{
             dispatch({type:finishLoading})
         }
     };
-    const openModal = (id)=>{
-        setShowPhoto(id)
-        dispatch({type:clickOpenModal,payload:id})
+    const openModal = (id,idx,month)=>{
+        setShowPhoto({id,idx,month})
+        dispatch({type:clickOpenModal,payload:{id,month}})
     }
     const closeModal = ()=>{
         dispatch({type:clickCloseModal})
     }
+    const handleClick = (event)=>{
+        const {nodeName}=event.target;
+        if(nodeName ==="IMG"){return}
+        closeModal()
+    }
     return (
-        <AppContext.Provider value={{showPhoto,closeModal,openModal,currentPath,setCurrentPath,fetchData,closeSidebar,openSidebar,...state}}>
+        <AppContext.Provider value={{handleClick,showPhoto,closeModal,openModal,currentPath,setCurrentPath,fetchData,closeSidebar,openSidebar,...state}}>
             {children}
         </AppContext.Provider>
     )

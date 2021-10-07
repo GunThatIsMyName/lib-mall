@@ -2,31 +2,28 @@ import React from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../context/AppContext";
 import { IoMdClose } from "react-icons/io";
-import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 
 const Modal = () => {
-    const { isModalOpen ,closeModal,monthData,showPhoto} = useGlobalContext(); 
-    const currentImage = monthData.find(item=>item.id === showPhoto)
-
+    const { isModalOpen, closeModal, monthData, showPhoto, handleClick } =
+        useGlobalContext();
+    const currentImage = monthData.find((item) => item.id === showPhoto.id);
     return (
-        <Wrapper>
-            {monthData && 
-            <div className={`modal ${isModalOpen && "openModal"}`}>
-                <div>hello</div>
-                <div className="box">
-                    <img src="" alt="" />
-                    <div className="slide-btn left-btn">
-                        <AiOutlineDoubleLeft />{" "}
+        <Wrapper onClick={handleClick}>
+            {monthData && (
+                <div className={`modal ${isModalOpen && "openModal"}`}>
+                    <div>hello</div>
+                    <div className="box">
+                        <img
+                            className="modal-image"
+                            src={currentImage ? currentImage.url : ""}
+                            alt="name"
+                        />
+                        <button onClick={closeModal} className="close-btn">
+                            <IoMdClose />
+                        </button>
                     </div>
-                    <div className="slide-btn right-btn">
-                        <AiOutlineDoubleRight />
-                    </div>
-                    <button onClick={closeModal} className="close-btn">
-                        <IoMdClose />
-                    </button>
                 </div>
-            </div>
-            }
+            )}
         </Wrapper>
     );
 };
@@ -47,38 +44,39 @@ const Wrapper = styled.div`
     }
     .box {
         margin: 3rem auto 0 auto;
-        width: 70vw;
-        height: 60vh;
-        background-color: white;
+        width: 50vw;
         position: relative;
-    }
-    .slide-btn {
-        color: red;
-        background-color: #181818;
-        padding:0.5rem;
-        border-radius:0.25rem;
-        position: absolute;
-        top: 50%;
-    }
-    .left-btn {
-        left: 0;
-    }
-    .right-btn {
-        right: 0;
+        .modal-image {
+            width: 100%;
+        }
     }
     .close-btn {
         position: absolute;
         width: 3rem;
         height: 2rem;
-        bottom: -5rem;
-        left: 50%;
-        transform: translateX(-50%);
+        right:0px;
+        background-color:white;
+        border:none;
+        border-radius:4px;
+        font-size:2rem;
+        cursor: pointer;
+        &:hover{
+            color:red;
+            transform:scale(1.04)
+        }
     }
     @media (min-width: 776px) {
         .box {
-            margin-top: 5rem;
+            margin-top: 2rem;
             width: 55vw;
-            height: 60vh;
+            height: 50vh;
+        }
+    }
+    @media (min-width: 1256px) {
+        .box {
+            margin-top: 1rem;
+            width: 35vw;
+            height: 50vh;
         }
     }
 `;

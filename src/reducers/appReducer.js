@@ -24,16 +24,12 @@ export const reducer = (state,action)=>{
                 ...state,isLoading:false
             }
         case clickOpenModal:
-            const id = action.payload;
-            const getItem = state.yearData.find(items=>{
-                let getID = items.image.filter(item=>{
-                    return item.id === id;
-                })
-                return getID
+            const {id,month} = action.payload;
+            const {image} = state.yearData.find(items=>{
+                return items.month === month
             })
-            const monthPhoto = getItem.image;
             return{
-                ...state,isModalOpen:true,monthData:monthPhoto
+                ...state,isModalOpen:true,monthData:image
             }
         case clickCloseModal:
             return{
