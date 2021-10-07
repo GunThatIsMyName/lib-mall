@@ -23,7 +23,7 @@ export const links = [
     {
         id: 3,
         text: "shop",
-        url: "/shop",
+        url: "/shop/2021",
     },
     {
         id: 4,
