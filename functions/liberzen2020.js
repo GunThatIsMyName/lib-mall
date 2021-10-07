@@ -5,7 +5,7 @@ const API_KEY = process.env.API_KEY;
 console.log(API_KEY)
 
 
-const airtable = new Airtable({API_KEY})
+const airtable = new Airtable({apiKey:API_KEY})
   .base('appZrSYuCLtfDeFr6')
   .table('2020')
 

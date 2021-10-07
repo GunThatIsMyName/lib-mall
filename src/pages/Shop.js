@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import { Filters, Modal, PageHero, ProductList, Sort } from '../components';
 
 const ProductsPage = () => {
-  const {pathname} = useLocation();
   return (
     <main>
       <Modal />
-        <PageHero pathname={pathname} />
+        <PageHero />
       <Wrapper className="page">
         <div className="section-center products">
         <Filters  />
           <div>
             <Sort />
-            <ProductList pathname={pathname} />
+            <ProductList />
           </div>
         </div>
       </Wrapper>

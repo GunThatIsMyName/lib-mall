@@ -3,8 +3,9 @@ import { useLocation } from "react-router";
 import styled from "styled-components";
 import { useGlobalContext } from "../context/AppContext";
 
-const ProductList = ({ pathname }) => {
+const ProductList = () => {
   const { fetchData, yearData, isLoading, openModal } = useGlobalContext();
+  const {pathname}=useLocation();
   useEffect(() => {
     fetchData(pathname);
   }, [pathname]);
