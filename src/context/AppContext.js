@@ -3,7 +3,7 @@ import { beginLoading, clickCloseModal, clickOpenModal, CloseSideBar, finishLoad
 import { reducer } from "../reducers/appReducer";
 import axios from "axios";
 
-const liberzenEndPoint =`/.netlify/functions/liberzen`
+const liberzenEndPoint =`/api/liberzen`
 
 const initState ={
     isSidebarOpen :false,
