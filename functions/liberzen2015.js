@@ -1,6 +1,10 @@
-const Airtable = require("airtable-node");
+require("dotenv").config();
+const Airtable = require('airtable-node');
+ 
+const apiKey = process.env.API_KEY;
 
-const airtable = new Airtable({ apiKey: "key2vamNKNTA5EAjG" })
+
+const airtable = new Airtable({ apiKey: apiKey})
     .base("appZrSYuCLtfDeFr6")
     .table("2015");
 
